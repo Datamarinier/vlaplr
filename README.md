@@ -9,7 +9,7 @@ You can install the released version of vlaplr from this repo with:
 
 ``` r
 require(devtools)
-install_github("datamarinier/vlaplr)
+install_github("datamarinier/vlaplr")
 ```
 
 ## Usage

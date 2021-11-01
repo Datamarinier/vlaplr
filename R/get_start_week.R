@@ -10,7 +10,7 @@
 
 get_start_week <- function(x){
 
-  aweek::get_date(week = lubridate::week(lubridate::date(x)),
+  aweek::get_date(week = lubridate::epiweek(lubridate::date(x)),
                   year = lubridate::year(lubridate::date(x)),
                   day = 1,
                   start = 1 )

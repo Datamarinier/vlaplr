@@ -14,8 +14,13 @@ install_github("datamarinier/vlaplr")
 
 ## Usage
 
-To use this interaface…
+This is only the initial setup. The package contains one unuseful toy
+function which gives you the start of the week (Monday) of a certain
+date.
 
 ``` r
-# usage
+library(vlaplr)
+get_start_week("2021-11-03")
+
+#returns "2021-11-01 
 ```

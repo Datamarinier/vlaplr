@@ -51,7 +51,7 @@ call_api_multiple_times <- function(iterator, URL, path, query, resultVector,use
 
     if(parallel::detectCores()==1){
 
-      error("You only have one core, dividing the work over cores is not possible. Please set 'use_parallel=FALSE'. ")
+      stop("You only have one core, dividing the work over cores is not possible. Please set 'use_parallel=FALSE'. ")
 
     }
 

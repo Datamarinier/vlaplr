@@ -10,6 +10,8 @@
 #'
 #' @return Dataframe with the full text and the author.
 #' @export
+#'
+#' @importFrom dplyr %>%
 #' @examples
 #' \dontrun{
 #' procedure_object <- search_plenary(date_range_from = "2021-01-01",

@@ -7,11 +7,12 @@
 #' @param date_range_to The enddate, should be in format "yyyy-mm-dd".
 #' @param use_parallel Boolean: should parallel workers be used to call the API?
 #'
+#' @importFrom dplyr %>%
+#'
 #' @return Returns a dataframe with IDs of the plenary sessions in the indicated date range, together with the journal IDs and activtity IDs.
 #' @export
 #' @examples
 #'
-#' @importFrom dplyr %>%
 #' \dontrun{
 #' plenary_object <-  vlaplr::search_plenary(date_range_from = "2021-01-01",
 #'                                       date_range_to= "2021-03-31",

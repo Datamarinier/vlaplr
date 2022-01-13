@@ -8,10 +8,11 @@
 #' @param type Which type of activity do you want to search? Valid options are "all", "debatten","gedachtenwisselingen","vragen_interpelaties" and "parlementaire_initiatieven".
 #' @param use_parallel Boolean: should parallel workers be used to call the API?
 #'
+#' @importFrom dplyr %>%
+#'
 #' @return Dataframe with the full text and the author.
 #' @export
 #'
-#' @importFrom dplyr %>%
 #' @examples
 #' \dontrun{
 #' procedure_object <- search_plenary(date_range_from = "2021-01-01",

@@ -3,5 +3,6 @@
 export(call_api_once)
 export(search_plenary)
 export(search_terms)
+importFrom(dplyr,"%>%")
 importFrom(foreach,"%dopar%")
 importFrom(utils,object.size)

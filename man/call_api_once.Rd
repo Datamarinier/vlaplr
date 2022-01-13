@@ -15,9 +15,6 @@ call_api_once(URL, path, query, ...)
 
 \item{...}{whichever to add behind path}
 }
-\value{
-
-}
 \description{
 Call an API once
 }

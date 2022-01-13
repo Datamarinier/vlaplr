@@ -5,11 +5,6 @@
 #' @param path the path
 #' @param query the actual query (with list())
 #' @param ... whichever to add behind path
-#'
-#' @return
-#' @export
-#'
-#' @examples
 call_api_once <- function(URL,path,query,...){
 
   response <- httr::GET( file.path(URL,path,...), query=query)

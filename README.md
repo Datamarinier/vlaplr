@@ -14,13 +14,30 @@ install_github("datamarinier/vlaplr")
 
 ## Usage
 
-This is only the initial setup. The package contains one unuseful toy
-function which gives you the start of the week (Monday) of a certain
-date.
+Everything is structured around the plenary sessions of parliament. The
+first step is to select the plenary sessions that occurred during a
+certain period. This can be done with the function search\_plenary. This
+function returns a plenary\_object (a dataframe) with all the necessary
+variables to describe the activities in that session (e.g. debates or
+parliamentary questions). With this object the function search\_terms
+enables you to search all the spoken words in the Flemish Parliament.
+
+To boost performance it is possible to divide the calls over several
+workers, enabling to shorten your waiting time.
 
 ``` r
 library(vlaplr)
-get_start_week("2021-11-03")
+procedure_object <- search_plenary(date_range_from = "2021-01-01",
+                                      date_range_to= "2021-03-31",
+                                      use_parallel=TRUE)
+                                      
+search_terms(procedure_object = procedure_object,
+             search_terms =  c("statistiek","welzijn"),
+             type = c("all"),
+             use_parallel=TRUE )
+             
+#or when you prefer to use pipes:
 
-#returns "2021-11-01 
+search_plenary("2021-01-01", "2021-03-31",  use_parallel=TRUE) %>%
+  search_terms(c("statistiek","welzijn"), c("all"), use_parallel=TRUE )
 ```

@@ -49,6 +49,12 @@ call_api_multiple_times <- function(iterator, URL, path, query, resultVector,use
 
   if(use_parallel==TRUE){
 
+    if(parallel::detectCores()==1){
+
+      error("You only have one core, dividing the work over cores is not possible. Please set 'use_parallel=FALSE'. ")
+
+    }
+
     message(crayon::green(cli::symbol$tick,"Dividing the calls between", parallel::detectCores() - 1, "workers."))
 
     cl <- parallel::makeCluster(parallel::detectCores() - 1)

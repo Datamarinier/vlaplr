@@ -25,7 +25,7 @@ Imports:
     purrr,
     stringr,
     tibble,
-    tidyr,
+    tidyr (>= 1.1.4),
     xml2
 Suggests: 
     testthat (>= 3.0.0)

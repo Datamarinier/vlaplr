@@ -56,8 +56,10 @@ search_terms <- function(plenary_object,search_terms,type="all",use_parallel=FAL
   message(crayon::green(cli::symbol$tick,"Size of text object = ", format(object.size(mainlist), units = "MB", digits = 1L)))
 
   mainlist %>%
-    purrr::map_dfr(~ .x %>% tibble::as_tibble(), .id = "journaallijn_id") %>%
-    dplyr::select(journaallijn_id,sprekertekst,sprekertitel) -> raw_text
+    tibble::tibble(spreker = ., journaallijn_id = names(mainlist)) %>%
+    tidyr::unnest_wider(spreker)%>%
+    dplyr::select(journaallijn_id,sprekertekst,sprekertitel ) %>%
+    tidyr::unnest(cols = c(sprekertekst, sprekertitel)) -> raw_text
 
   message(crayon::green(cli::symbol$tick,"Scrubbing away all html-tags "))
 

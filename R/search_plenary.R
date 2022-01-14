@@ -78,10 +78,10 @@ search_plenary <- function(date_range_from,date_range_to,use_parallel=FALSE){
            ,datumeinde
            ,journaallijn_id
            ,type_activiteit
-           ,item_id = id_id
+           ,item_id = id
            ,objecttype_naam
-           ,onderwerp = onderwerp_onderwerp
-           ,titel = titel_titel) -> result
+           ,onderwerp
+           ,titel) -> result
 
   result %>%
     dplyr::group_by(type_activiteit) %>%
